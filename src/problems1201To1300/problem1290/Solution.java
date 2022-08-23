@@ -1,4 +1,4 @@
-package problems1200To1300.problem1290;
+package problems1201To1300.problem1290;
 
 import utils.ListNode;
 

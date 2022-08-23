@@ -1,4 +1,4 @@
-package problems900To1000.problem933;
+package problems901To1000.problem933;
 
 import java.util.*;
 

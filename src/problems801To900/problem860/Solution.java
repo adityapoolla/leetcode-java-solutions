@@ -1,4 +1,4 @@
-package problems800To900.problem860;
+package problems801To900.problem860;
 
 class Solution {
     public boolean lemonadeChange(int[] bills) {

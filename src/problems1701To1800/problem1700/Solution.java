@@ -1,4 +1,4 @@
-package problems1700To1800.problem1700;
+package problems1701To1800.problem1700;
 
 import java.util.*;
 

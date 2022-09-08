@@ -2,35 +2,33 @@ package problems1To100.problem5;
 
 import java.util.HashMap;
 import java.util.Map;
-
-public class Solution {
-	public String longestPalindrome(String s) {
-		String longestPalindrome = s.charAt(0) + "";
-		int start = 0, end = 0;
-		Map<Character, Integer> map = new HashMap<>();
-		for(end = 0; end < s.length(); end++) {
-			char ch = s.charAt(end);
-			Integer duplicateIndex = map.get(ch);
-			if(duplicateIndex != null) {
-				String subStr = s.substring(duplicateIndex, end) + ch; 
-				boolean isPalindrome = true;
-				for(int i = 0; i < subStr.length()/2; i++) {
-					if(subStr.charAt(i) != subStr.charAt(subStr.length() - i -1)) {
-						isPalindrome = false;
-					}
-				}
-				if(isPalindrome) {
-					longestPalindrome = subStr.length() > longestPalindrome.length() ? subStr : longestPalindrome;
+class Solution {
+	public static String longestPalindrome(String s) {
+		int start = 0;
+		int end = 0;
+		for(int i = 0; i < s.length(); i++) {
+			// mid is i check left and right if it is a palindrome
+			int l = i - 1;
+			int r = i + 1;
+			int count = 1;
+			while(l > -1 && r < s.length()) {
+				if(s.charAt(l) == s.charAt(r)) {
+					count += 2;
+					l--;
+					r++;
 				} else {
-					for(int i = start; i <= duplicateIndex; i++) {
-						map.remove(s.charAt(i));
-					}
-					start = duplicateIndex + 1;
+					break;
 				}
-			} else {
-				map.put(ch, end);
+			}
+			if(count > end - start + 1) {
+				start = l + 1;
+				end = r - 1;
 			}
 		}
-		return longestPalindrome;
+		return s.substring(start, end + 1);
+	}
+
+	public static void main(String[] args) {
+		System.out.println(longestPalindrome("babad"));
 	}
 }

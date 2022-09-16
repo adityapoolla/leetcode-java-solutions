@@ -1,4 +1,4 @@
-package problem2301To2400.problem2351;
+package problems2301To2400.problem2351;
 class Solution {
     public char repeatedCharacter(String s) {
         int[] store = new int[26];

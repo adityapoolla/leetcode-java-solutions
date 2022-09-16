@@ -1,4 +1,4 @@
-package problem2301To2400.problem2331;
+package problems2301To2400.problem2331;
 
 import utils.TreeNode;
 

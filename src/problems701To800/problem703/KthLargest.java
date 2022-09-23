@@ -24,15 +24,12 @@ class KthLargest {
     }
 
     public static void main(String[] args) {
-        PriorityQueue<Integer> q = new PriorityQueue<>(5);
-        System.out.println(q.size());
-        q.add(10);
-        q.offer(9);
-        q.offer(5);
-        q.offer(2);
-        q.offer(8);
-        q.offer(12);
-        System.out.println(q.size());
-        System.out.println(q.peek());
+        int[] a = {4, 5, 8, 2};
+        KthLargest kthLargest = new KthLargest(3, a);
+        kthLargest.add(3);   // return 4
+        kthLargest.add(5);   // return 5
+        kthLargest.add(10);  // return 5
+        kthLargest.add(9);   // return 8
+        kthLargest.add(4);   // return 8
     }
 }

@@ -1,0 +1,9 @@
+package problems2401To2500.problem2413;
+
+class Solution {
+    public int smallestEvenMultiple(int n) {
+        if(n % 2 == 0)
+            return n;
+        return n * 2;
+    }
+}
